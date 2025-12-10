@@ -67,7 +67,7 @@
 }
 
 // ====================================================================================================
-#align(horizon + center)[#title()[Obyčejné diferenciální rovnice] *Zápisky z přednášek* \ Jáchym Šmíd]
+#align(horizon + center)[#title()[Obyčejné diferenciální rovnice] *Zápisky z přednášek* \ Zimní semestr 2025/26]
 #align(left + bottom)[Last changed: #datetime.today().display()]
 #pagebreak()
 
