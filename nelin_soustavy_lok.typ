@@ -1,4 +1,4 @@
-#import "theorems.typ":*
+#import "config.typ":*
 #show: thm-rules
 
 = Soustava nelineárních diferenciálních rovnic - lokální chování

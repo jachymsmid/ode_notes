@@ -1,4 +1,4 @@
-#import "theorems.typ":*
+#import "config.typ":*
 #show: thm-rules
 
 = Nelineární diferenciální rovnice

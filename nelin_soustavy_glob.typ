@@ -1,3 +1,6 @@
+#import "config.typ":*
+#show: thm-rules
+
 = Soustava nelineárních diferenciálních rovnic - globální chování
 
 == Dynamické systemy

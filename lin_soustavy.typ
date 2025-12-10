@@ -1,4 +1,4 @@
-#import "theorems.typ":*
+#import "config.typ":*
 #show: thm-rules
 = Soustava lineárních diferenciálních rovnic
 Máme homogenní soustavu ODR ve tvaru
