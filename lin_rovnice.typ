@@ -9,7 +9,7 @@ Je tedy dobré znát a umět analyzovat chování různých systémů obyčejný
 == Metody řešení
 === Metoda separace proměnných
 Rovnice se separovatelnými proměnnými je rovnice typu
-$ (dif y)/(dif x) = g(x)h(y), quad chevron.r x,y chevron.l in RR $
+$ (dif y)/(dif x) = g(x)h(y), quad chevron.l x,y chevron.r in RR $
 Použití separační metody je korektní za těchto předpokladů:
 - $g(x)$ je spojitá
 - $h(x)$ je spojitá
@@ -51,7 +51,7 @@ $
 Při metodě variace konstant nejdříve určíme řešní homogenní rovnice (znovu separací)
 $
 y_h' &+ a(x)y_h = 0\
-y_h &= C e^{-integral a dif x}
+y_h &= C e^(-integral a dif x)
 $
 Nyní uvažujeme $C = C(x)$ a dosadíme $y_h$ do původní rovnice. Tím dostaneme rovnici pro $C(x)$ a neznámá funkce je potom $y = C(x) e^(-integral a dif x)$.
 
@@ -62,9 +62,9 @@ y' + a(x)y = g(x)
 $
 Metoda integračního faktoru spočívá v tom přenásobit obě strany nějakou vhodnou funkcí abychom levou stranu dostali pod společnou derivaci. Pro naši rovnici je vhodným integračním faktorem funkce $e^(integral a dif x)$
 $
-y' + a(x)y &= g(x) quad backslash dot.op e^(A(x)), " kde " A(x) = integral a dif x\
+y' + a(x)y &= g(x) quad backslash dot.op e^(A(x)),
 $
-Zde použijeme znalosti že
+kde $A(x) = integral a dif x$. Zde použijeme znalosti že
 $
 & (d)/(dif x)(e^A y) = A e^A y (dif A)/(dif x) + e^A (dif y)/(dif x),
 $

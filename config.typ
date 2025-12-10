@@ -10,3 +10,20 @@
 
 #let numbered_eq(content) = math.equation(block: true, numbering: "(1)", content)
 #let imply = $quad arrow.r.double quad$
+
+// clean numbering for headings
+#let clean_numbering(..schemes) = {
+  (..nums) => {
+    let (section, ..subsections) = nums.pos()
+    let (section_scheme, ..subschemes) = schemes.pos()
+
+    if subsections.len() == 0 {
+      numbering(section_scheme, section)
+    } else if subschemes.len() == 0 {
+      numbering(section_scheme, ..nums.pos())
+    }
+    else {
+      clean_numbering(..subschemes)(..subsections)
+    }
+  }
+}

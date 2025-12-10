@@ -12,7 +12,7 @@ Tedy systémy bez vzájemného propojení (uncoupled systems) jsou rovnice typu
 #numbered_eq($
 X' = A X,
 $)<uncoupled_system>
-kde matice $A$ je diagonální. Pro takové systémy lze jednoduše najít řešení pomocí separace proměnných
+kde matice $A$ je diagonální. Pro takové systémy lze jednoduše najít řešení, při pridání počáteční podmínky, pomocí separace proměnných
 $
 x'_i = a_(i i) x_i quad arrow.long quad x_i = c_i e^(a_(i i)).
 $
@@ -32,8 +32,7 @@ Je technika, která nám pomůže převést obecný hommogenní lineární syst�
 #theorem()[Mějme matici $A$ typu $n times n$, jež má $n$ různých reálných vlastních čísel $lambda_i$. Pak ${ V_i}$ tvoří bázi v $RR^n$.
 Matice $P = ( V_1 bar.v dots bar.v V_n )$ je invertibiliní a $P^(-1) A P = "diag"(lambda_1, dots, lambda_n)$.]
 #linebreak()
-#theorem(name: "Obecněji")[Lineární transformace $T$ $n$-tého řádu, která vektoru $Y in RR^n$ přiřadí stavový vektor $X = T Y$  systému @uncoupled_system, zobrazuje systém @uncoupled_system na opět lineární systém #numbered_eq($Y' = B Y,$)<system2> kde matice $B = T^(-1) A T$ a systémy @uncoupled_system a @system2 jsou homeomorfní v $RR^n$. Zachovává-li zobrazení i orientaci pohybu, říkáme že jsou systémy navzájem topologicky ekvivalentní.
-]
+#theorem(name: "Obecněji")[Lineární transformace $T$ $n$-tého řádu, která vektoru $Y in RR^n$ přiřadí stavový vektor $X = T Y$  systému @uncoupled_system, zobrazuje systém @uncoupled_system na opět lineární systém #numbered_eq($Y' = B Y,$)<system2> kde matice $B = T^(-1) A T$ a systémy @uncoupled_system a @system2 jsou homeomorfní v $RR^n$. Zachovává-li zobrazení i orientaci pohybu, říkáme že jsou systémy navzájem topologicky ekvivalentní.]
 #linebreak()
 Jsme-li v $RR^2$ a $T = ( V_1 bar.v V_2 )$ pak nastává právě jedna z možností
 + $B = "diag"( lambda_1, lambda_2 )$ má-li $A$ 2 různá vlastní čísla,

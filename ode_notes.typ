@@ -1,4 +1,4 @@
-#import "theorems.typ":*
+#import "config.typ":*
 
 // styling
 #set text(font: "New Computer Modern", size: 11pt, lang: "cs")
@@ -9,22 +9,7 @@
 )
 #set par(first-line-indent: (all: false, amount: 1em), spacing: 0.65em, justify: true,)
 
-// headings
-#let clean_numbering(..schemes) = {
-  (..nums) => {
-    let (section, ..subsections) = nums.pos()
-    let (section_scheme, ..subschemes) = schemes.pos()
 
-    if subsections.len() == 0 {
-      numbering(section_scheme, section)
-    } else if subschemes.len() == 0 {
-      numbering(section_scheme, ..nums.pos())
-    }
-    else {
-      clean_numbering(..subschemes)(..subsections)
-    }
-  }
-}
 #set heading(numbering: clean_numbering("I.", "1.i"))
 
 //
