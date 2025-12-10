@@ -1,4 +1,4 @@
-#import "theorems.typ":*
+#import "config.typ":*
 #show: thm-rules
 = Motivace
 Motivací pro studium obyčejných diferenciálních rovnic (ODR) může být například rovnice
@@ -9,7 +9,7 @@ Je tedy dobré znát a umět analyzovat chování různých systémů obyčejný
 == Metody řešení
 === Metoda separace proměnných
 Rovnice se separovatelnými proměnnými je rovnice typu
-$ (dif y)/(dif x) = g(x)h(y), quad [x,y] in RR $
+$ (dif y)/(dif x) = g(x)h(y), quad chevron.r x,y chevron.l in RR $
 Použití separační metody je korektní za těchto předpokladů:
 - $g(x)$ je spojitá
 - $h(x)$ je spojitá
