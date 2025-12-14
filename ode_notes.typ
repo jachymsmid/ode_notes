@@ -65,3 +65,4 @@
 #include "nelin_rovnice.typ"
 #include "nelin_soustavy_lok.typ"
 #include "nelin_soustavy_glob.typ"
+#include "bifurkace.typ"
