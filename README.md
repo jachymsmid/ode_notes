@@ -2,8 +2,8 @@
 Poznámky k předmětu Obyčejné diferenciální rovnice. Zimní semestr 2025/26
 
 # Jak psát typst
-Typst se píše velmi podobně jako Markdown, dokumentaci lze nalézt [zde](https://typst.app/docs/reference/)
-Taky se lze inspirovat zdroji pro tyto poznámky.
+Typst se píše velmi podobně jako Markdown, dokumentaci lze nalézt [zde](https://typst.app/docs/reference/).
+Taky se lze inspirovat zdrojovými soubory pro tyto poznámky. Typst lze psát v prostředí podobné Overleaf, jde o webovou [aplikaci](https://typst.app/play/) (je nutné si vytvořit účet). Nebo lze poznámky kompilovat lokálně pomocí příkazu `typst project_name.typ` anebo pro průběžnou kompilaci `typst watch project_name.typ`.
 ## Matematické rovnice
 Syntax pro typst je jednodušší, než pro LaTeX protože lze používat znaky místo klíčových slov s '\'.
 Např. systém Eulerových rovnic v 1D by se zapsal následovně (není nutné používat prostředí `\begin{align}` ani jakékoliv jiné)
