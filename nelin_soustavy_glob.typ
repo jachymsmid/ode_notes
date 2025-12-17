@@ -96,21 +96,42 @@ Této věty existují permutace pro vnější/vnitřní okolí a $alpha$/$omega$
 v bodě $x_0$. Pro $forall x in Sigma$ dostatečně blízko $x_0$ tak, že řešení @auto_system
 procházející bodem $x_0$ v čase $t=0$ prochází znovu plochou $Sigma$ v bodě $P(x)$ blízko $x_0$. Pak $x mapsto P(x)$ je Poincarého zobrazení.]
 #linebreak()
-#theorem()[Nechť ... je otveřená množina, .... Předpokládejme, že ... je periodické řešení @auto_system s periodou ... a že cyklus
-...
-je obsažen v .... Nechť ... je ortogonální nadrovina k ... v ...
-...
-Pak existuje okolí ... a jediná funkce ... definovaná a spojitě diferencovatelná pro ... tak, že ... a ... pro ...
-....]
+#theorem()[Nechť $E subset RR^n$ je otveřená množina, $F in cal(C)^1$. Předpokládejme, že $phi_t (x)$ je periodické řešení @auto_system s periodou $T$ a že cyklus
+$ Gamma = {x in RR^n : x = phi_t (x_0), 0 lt.eq t lt.eq T} $
+je obsažen v $E$. Nechť $Sigma$ je ortogonální nadrovina k $Gamma$ v $x_0$ 
+$ Sigma = {x in RR^n : (x - x_0) dot.op F(x_0) = 0} $
+Pak existuje okolí $cal(N)_delta$ a jediná funkce $tau (x)$ definovaná a spojitě diferencovatelná pro $x in cal(N)_delta (x_0)$ tak, že $tau (x_0) = T$ a $phi_tau (x) in Sigma$ pro $forall x in cal(N)_delta (x_0).$
+$ P(x) = phi_(tau(x)) (x). $]
 #linebreak()
-#remark()[]
+#remark()[Je-li $P in cal(C)^1, thick cal(U) = cal(N)_delta (x_0) inter Sigma$, pak 
+- Pevné body $P(x)$ odpovídají periodickým orbitám $phi (dot.op, x)$ systému @auto_system.
+- K $P(x)$ existuje inverze $P^(-1) in cal(C)^1.$]
 
 === Poincarého zobrazní pro rovinný systém
-#definition()[]
+#theorem()[Nechť ... je počátek souřadnicového systému  a .... ... je normála procházející .... Bod ... dělí přímku ... na část ... uvnitř ... a na ... vně .... Nechť ... je vzdálenost od počátku na přímce ... pro ... na ... a pro ... na ....
+Dle definice Poincarého zobrazení definované na okolí ... a platí ....
+
+Použijeme ... k posouzení stability periodické orbity ....
+
+Definujme posunutí po ...
+...
+Pak .... Z věty o střední hodnotě
+...]
 #linebreak()
-#theorem()[]
+#theorem()[Buď ..., ... je otevřená množina, ..., ... je periodické řešení systému @auto_system s periodou .... Pak derivace Poincarého zobrazení ... podél přímky ... kolmé na ..., kde ... v ... je dáno jako .... Dále je ...
+-
+-
+-]
 #linebreak()
-#definition()[]
+#definition()[Buď ... Poincarého zobrazení. Pro ... rovinný periodický cyklus systému @auto_system a .... Pak ... je-li ...
+...
+Pak se ... nazývá cyklus násobnosti ..., je-li ... pak je tzv. jednoduchý.]
+#linebreak()
+#remark()[Lze ukázat, že
+- je-li ... sudé, pak ... je semistabilní cyklus.
+- je-li ... liché, pak
+  ...
+]
 === Zobecnění pro systémy vyšších dimenzí
 
 == Stabilní varieta periodických orbit
