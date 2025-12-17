@@ -51,9 +51,6 @@ $ X(t) = P E(t) P^(-1) X(0), $
 kde $E(t)$ je diagonální matice
 $ E(t) = "diag"(e^(lambda_1 t), dots, e^(lambda_n t)). $
 
-== Princip superpozice řešení pro homogenní soustavy
-Jestliže $X_1, dots , X_n$ jsou řešení homogenní soustvay ODR na intervalu $J$ a $C_1, dots, C_n$ jsou libovolné konstanty, pak lineární kombinace $C_1 X_1+dots+C_n X_n$ je opět řešením soustvay na $J$.
-
 === Fundamentální systém
 
 == Exponenciální matice
@@ -63,7 +60,7 @@ O lineární rovnici víme, že obecné řešení má tvar $x = c e^(a t)$, cht�
 #theorem()[Je-li $A$ typu $n times n$ reálná či komplexní matice, tak maticová řada $limits(sum)_(k = 0)^infinity (A^k t^k)/k!$ konverguje k matici $e^(A t)$ třídy $n times n$, která má valstnosti:
 + $dif/(dif t) e^(A t) = A e^(A t) = e^(A t) A$
 + $e^((t+s)A) = e^(A t) e^(A s)$
-+ $e^(A 0) = II and e^(A t)$ je invertibilní $and e^(A t) e^(- A t) = II$, kde $II$ je jednotková matice.]
++ $e^(A 0) = EE and e^(A t)$ je invertibilní $and e^(A t) e^(- A t) = EE$, kde $EE$ je jednotková matice.]
 #linebreak()
 
 Bude-li $X(0) = u_j$ pak $ X = e^(A t) = e^(lambda_j t) e^(A t) e^(-lambda_j t) u_j = e^(lambda_j t) e^((A -lambda_j I)t) = e^(lambda_j t) (I + (A - lambda_j I)t + dots ) u_j = e^(lambda_j t) u_j. $
@@ -80,7 +77,12 @@ X(t) = e^(A t) X_0.
 $]
 
 #linebreak()
-#theorem(name: "Cayley-Hamilton")[Nechť ... je charakteristický polynom matice typu .... Pak maticový polynom získaný zaměněním ... za ... do ... splňuje ....]
+#theorem(name: "Cayley-Hamilton")[Nechť $P(lambda)$ je charakteristický polynom matice typu $n times n$. Pak maticový polynom získaný zaměněním $A^k$ za $lambda^k$ do $P(lambda)$ splňuje $P(A) = 0$.]
+#linebreak()
+#theorem()[Koeficienty $b_i$ vyhovují rovnici
+$ e^(lambda_k t) = b_0 (t) + b_1 (t) lambda_n + dots + b_(n-1) (t) lambda_k^(n-1), quad k = 1, dots, n $
+jsou-li $lambda_k$ jednoduchá vlastní čísla. Pro $r$-násobné vlastní číslo platí
+$ (dif^s)/(dif lambda^s) e^(lambda t) = (dif^s)/(dif lambda^s) (b_0 (t) + b_1 (t) lambda_n + dots + b_(n-1) (t) lambda_k^(n-1)), quad s = 1,dots,r-1 $]
 == Metody řešení soustav lineárních rovnic
 === 1. Eulerova metoda (pro matici s konstantními koeficienty)
 Řešení odhadujeme ve tvaru $x_i = u_i e^{lambda_i}$, kde $(u_i, lambda_i)$ je vlastní pár matice $A$. Může nastat několik případů
@@ -141,8 +143,8 @@ Bod pro nějž platí $F(X^*) = 0$ nazýváme bod rovnováhy. Pro lineární sys
 Rozlišujeme následující body rovnováhy pro rovinný homogenní systém
 - Uzel: $lambda_1, lambda_2 in RR quad and quad lambda_1 != lambda_2$
 - Sedlo: $lambda_1, lambda_2 in RR quad and quad lambda_1 lambda_2 < 0$
-- Ohnisko: $lambda_(1,2) in CC$
-- Střed: $lambda_(1,2) = plus.minus i beta$
+- Ohnisko: $lambda_(1,2) in CC, thick "Re"(lambda_(1,2)) != 0$
+- Střed: $lambda_(1,2) = plus.minus i beta, thick i = sqrt(-1)$
 
 == Obcné řešení nehomogenního problému
 Mějme soustavu ve tvaru

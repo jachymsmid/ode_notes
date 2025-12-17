@@ -108,39 +108,56 @@ $ P(x) = phi_(tau(x)) (x). $]
 - K $P(x)$ existuje inverze $P^(-1) in cal(C)^1.$]
 
 === Poincarého zobrazní pro rovinný systém
-#theorem()[Nechť ... je počátek souřadnicového systému  a .... ... je normála procházející .... Bod ... dělí přímku ... na část ... uvnitř ... a na ... vně .... Nechť ... je vzdálenost od počátku na přímce ... pro ... na ... a pro ... na ....
-Dle definice Poincarého zobrazení definované na okolí ... a platí ....
+#theorem()[Nechť $x_0$ je počátek souřadnicového systému, $Gamma$ je periodická orbita a $x_0 in Gamma inter Sigma$. $Sigma$ je normála na $Gamma$ procházející $x_0$. Bod $0$ dělí přímku $Sigma$ na část $Sigma^+$ uvnitř $Gamma$ a na $Sigma^-$ vně $Gamma$. Nechť $s$ je vzdálenost od počátku
+na přímce $Sigma$ pro $s>0$ na $Sigma^+$ a pro $s<0$ na $Sigma^-$. Dle definice Poincarého zobrazení definované na okolí $abs(s) < delta$ a platí $P(0) = 0$.
 
-Použijeme ... k posouzení stability periodické orbity ....
-
-Definujme posunutí po ...
-...
-Pak .... Z věty o střední hodnotě
-...]
+Použijeme $P'(0)$ k posouzení stability periodické orbity $Gamma$. Definujme posunutí po $Sigma$ 
+$ d(s) = P(s) - s $
+Pak $d(0) = 0, thick d'(s) = P'(s) - 1$. Z věty o střední hodnotě
+$
+(d(s) - d(0))/(s-0) = d'(sigma)\
+d(s) = s d'(sigma), quad sigma in (0,s)
+$
+Je-li $d'(s)$ spojité zobrazení a $d'(0) != 0$ pak má $d'(s)$ stejné znaménko na nějakém okolí.
+- Je-li $ d'(0)<0 imply cases(d(s) < 0 : s>0, d(s) > 0 : s<0) $
+  tzn. cyklus je stabilní
+- Je-li $ d'(0)>0 imply cases(d(s) < 0 : s<0, d(s) > 0 : s>0) $
+  tzn. cyklus je nestabilní limitní cyklus a $alpha$-limitní cyklus.
+]
 #linebreak()
-#theorem()[Buď ..., ... je otevřená množina, ..., ... je periodické řešení systému @auto_system s periodou .... Pak derivace Poincarého zobrazení ... podél přímky ... kolmé na ..., kde ... v ... je dáno jako .... Dále je ...
--
--
--]
+#theorem()[Buď $E subset RR^n$, $E$ je otevřená množina, $F in cal(C)^1 (E)$, $gamma(t)$ je periodické řešení systému @auto_system s periodou $T$. Pak derivace Poincarého zobrazení $P(s)$ podél přímky $Sigma$ kolmé na $Gamma$, kde
+$Gamma = {x in RR^2 : x = gamma(t) - gamma(0), 0 lt.eq t lt.eq T}$ v $x=0$ je dáno jako $P'(0) = exp(integral_0^T nabla dot.op F(gamma(t))dif t)$. Dále je $gamma(t)$:
+- stabilní limitní cyklus je-li $integral_0^T nabla dot.op F(gamma(t))dif t < 0$ 
+- nestabilní limitní cyklus je-li $integral_0^T nabla dot.op F(gamma(t))dif t > 0$ 
+- je-li $integral_0^T nabla dot.op F(gamma(t))dif t = 0$  pak cyklus může být stabilní, nestabilní, nebo semistabilní.]
 #linebreak()
-#definition()[Buď ... Poincarého zobrazení. Pro ... rovinný periodický cyklus systému @auto_system a .... Pak ... je-li ...
-...
-Pak se ... nazývá cyklus násobnosti ..., je-li ... pak je tzv. jednoduchý.]
+#definition()[Buď $P(s)$ Poincarého zobrazení. Pro $Gamma$ rovinný periodický cyklus systému @auto_system a $d(s) = P(s) - s$. Pak je-li $d(0) = d'(0) = dots = d^(\(n\))(0) = 0$ 
+$ d^(\(n\)) (0) != 0 $
+Pak se $Gamma$ nazývá cyklus násobnosti $n$, je-li $n = 1$ pak je cyklus tzv. jednoduchý.]
 #linebreak()
 #remark()[Lze ukázat, že
-- je-li ... sudé, pak ... je semistabilní cyklus.
-- je-li ... liché, pak
-  ...
+- je-li $n$ sudé, pak $Gamma$ je semistabilní cyklus.
+- je-li $n$ liché, pak $Gamma$ je $ cases("stabilní" : thick d^(\(n\))(0) < 0, "nestabilní" : thick d^(\(n\))(0) > 0) $
 ]
 === Zobecnění pro systémy vyšších dimenzí
+#theorem()[Nechť $Gamma: x = gamma(t), thick 0 lt.eq t lt.eq T$ je periodická orbita v $E$, $E subset RR^n$ je otevřená množina. Místo $P'(s)$ je nutné používat Jacobiho matici zobrazení
+$ D P(x_0), thick x_0 in Gamma $
+Linearizujeme podél $Gamma$ 
+$ dot(x) = A(t) x, quad A(t) = D F(gamma(t)) $
+Fundamentální matice systému je $phi.alt : dot(phi.alt) = A(t) phi.alt$ 
+$ phi.alt(0) = EE, quad norm(D P(x_0)) = norm(phi.alt(T)) = norm(e^(B t)) $
+kde $B$ je konstantní matice, vlastní čísla matice e^(B t) jsou $e^(lambda_j t)$, kde $lambda_j$ jsou vlastní čísla matice $B$. $lambda_i$ jsou charakteristické exponenty $gamma(t)$ a $e^(lambda_i t)$ jsou charakteristické násobky $gamma(t)$.]
 
 == Stabilní varieta periodických orbit
-#theorem(name: "O stabilní varietě periodické orbity")[]
+#theorem(name: "O stabilní varietě periodické orbity")[Buď ..., ... je otevřená ... a ... je peridická orbita systému @auto_system s periodou ....
+
+Buď .... tok systému @auto_system a .... Má-li ... charakteristických exponentů zápornou reálnou část (...) a ... kladnou reálnou část, pak existuje ... takové, že stabilní varieta
+....]
 == Poincarého-Bendixsonova teorie
-#theorem()[]
+#theorem(name: "Poincaré-Bendixsonova")[Nechť $F in cal(C)^1(E)$, $E$ je otevřená a taková, že @auto_system má trajektorii v nějaké kompaktní podmnožině $E$. Pak neobsahuje-li $omega(Gamma)$ žádné kritické body je $omega(Gamma)$ periodická orbita systému @auto_system.]
 #linebreak()
-#theorem()[]
+#theorem()[Uvnitř limitního cyklu planárního systému @auto_system existuje alespoň jeden bod rovnováhy.]
 #linebreak()
-#theorem()[]
+#theorem(name: "Bendixsonova kritérium")[Nechť $F in cal(C)^1(E)$, $E subset RR^2$ je otevřená jednoduše souvislá. Jestliže divergence vektorového pole $F$ není identicky rovná nule a nemění-li znaménko v $E$, pak systém @auto_system nemá periodickou orbitu v $E$.]
 #linebreak()
-#proof()[]
+#proof(name: "Důkaz sporem")[doplnit ...]

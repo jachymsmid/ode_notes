@@ -96,6 +96,11 @@ Tím dostaneme soustavu $dot(U) = G(U)$, ve které je bod $H$ počátkem. Sestav
 == Stabilita
 
 == Body rovnováhy
+
+
+
+
+== Body rovnováhy nelineárního systému
 #definition(name: "Bod rovnováhy")[Body rovnováhy jsou body pro něž platí
 $
 F(X_0) = 0.
@@ -112,12 +117,7 @@ Rozlišujeme několik druhů bodů rovnováhy:
 #linebreak()
 #theorem(name: "Hurwitzovo kriterium")[]
 
-
-
-
-== Body rovnováhy nelineárního systému
-
-Mějme nelineární systém ve tvaru:
+Mějme rovinný nelineární systém ve tvaru:
 $
 dot(x) &= P( x, y )\
 dot(y) &= Q( x, y )
