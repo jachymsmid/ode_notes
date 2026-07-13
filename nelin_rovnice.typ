@@ -1,6 +1,5 @@
 #import "config.typ":*
-#show: thm-rules
-
+#show: frame-style(styles.hint)
 = Nelineární diferenciální rovnice
 Nelinární ODR v normálním tvaru nazýváme rovnici
 $

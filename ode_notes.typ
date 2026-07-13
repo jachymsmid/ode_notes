@@ -52,8 +52,22 @@
 }
 
 // ====================================================================================================
-#align(horizon + center)[#title()[Obyčejné diferenciální rovnice] *Zápisky z přednášek* \ Zimní semestr 2025/26]
+#align(horizon + center)[#title()[Obyčejné diferenciální rovnice] *Zápisky z přednášek* \ Jáchym Šmíd]
 #align(left + bottom)[Last changed: #datetime.today().display()]
+#pagebreak()
+
+= Úvod
+Dostává se vám do rukou materiál, který vznikl jako moje osobní poznámky z přednášek. Do těchto zápisků jsem ale dal tolik energie, že jsem se rozhodl je rozšířit, zkompletovat a poskytnou jako učební materiál.
+
+Struktura je následující:
+- Prvně se zabýváme lineárními rovnicemi prvního řádu, téměř veškerá jejich teorie zde probíraná by měla být známá z předešlých předmětů. Popíšeme různé metody řešení a také vyřkneme větu o existenci a jednoznačnosti.
+- Navazujeme soustavami lineárních rovnic, kde si ukážeme diagonalizaci systémů, což je hojně užívaná technika jestliže máme více počátečních podmínek, pro které potřebujeme spočítat stejnou rovnici. Ukážeme nějaké metody
+řešení a dále zabrousíme do teorie dynamických systémů.
+- Následují nelineární rovnice a systémy a jejich lokální chování. Stejně jako pro lineární systémy vyřkneme větu o existenci a jednoznačnosti. Dále se budeme zabývat linearizací a větou Hartman-Grobman. Následuje pojednání o stabilitě a bodech rovnováhy nelineárních systémů.
+- V této kapitole se budeme snažit popsat globální chování nelineárních systémů. Uvedeme dynamické systémy, definujeme limitní množiny a atraktory, periodické orbity. Zavedeme Poincarého zobrazení. Následně uvedeme Poincaré-Bendixsonovu teorii.
+- Poslední kapitolou je úvod do teorie bifurkací.
+
+
 #pagebreak()
 
 #outline(depth: 3)
@@ -66,3 +80,4 @@
 #include "nelin_soustavy_lok.typ"
 #include "nelin_soustavy_glob.typ"
 #include "bifurkace.typ"
+#include "appendix.typ"

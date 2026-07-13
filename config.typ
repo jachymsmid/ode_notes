@@ -1,14 +1,46 @@
-#import "@preview/lemmify:0.1.8":*
-#let (
-  theorem, lemma,
-  remark, example,
-  proof, definition, rules: thm-rules
-) = default-theorems("thm-group", lang: "cs")
-#let theorem = theorem.with(numbering: none)
-#let remark = remark.with(numbering: none)
-#let definition = definition.with(numbering: none)
+// theorems,...
+#import "@preview/frame-it:2.0.0":*
+#let (definition,) = frames(
+  definition: ("Definice", black),
+  kind: "definition", 
+)
+#let (theorem,) = frames(
+  theorem: ("Věta",black),
+  kind: "theorem",
+)
+#let (proof,) = frames(
+  proof: ("Důkaz", black),
+  kind: "proof", 
+)
+#let (example,) = frames(
+  example: ("Příklad",black),
+  kind: "example",
+)
+#let (remark,) = frames(
+  remark: ("Poznatek", black),
+  kind: "remark", 
+)
+#let (lemma,) = frames(
+  lemma: ("Lemma",black),
+  kind: "lemma",
+)
 
+// theorems show rules
+#let setup-frames(doc) = {
+  show: frame-style(styles.boxy, kind: "definition")
+  show: frame-style(styles.boxy, kind: "theorem")
+  show: frame-style(styles.hint, kind: "proof")
+  show: frame-style(styles.hint, kind: "example")
+  show: frame-style(styles.hint, kind: "remark")
+  show: frame-style(styles.boxy, kind: "lemma")
+  
+  doc
+}
+
+// numbered equations environment
 #let numbered_eq(content) = math.equation(block: true, numbering: "(1)", content)
+
+// implication sign
 #let imply = $quad arrow.r.double quad$
 
 // clean numbering for headings

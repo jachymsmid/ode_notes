@@ -1,11 +1,11 @@
 #import "config.typ":*
-#show: thm-rules
-= Soustava lineárních diferenciálních rovnic
+#show: frame-style(styles.hint)
+= Soustavy lineárních diferenciálních rovnic
 Máme homogenní soustavu ODR ve tvaru
 #numbered_eq($
 X' = A X.
 $)<lin_homo_system>
-#remark()[Každá homogenní soustava má triviální řešení $X = 0$.]
+#remark[][Každá homogenní soustava má triviální řešení $X = 0$.]
 
 == Systémy s diagonální maticí A
 Tedy systémy bez vzájemného propojení (uncoupled systems) jsou rovnice typu
@@ -27,12 +27,12 @@ kde $C = X(0)$.
 Je technika, která nám pomůže převést obecný hommogenní lineární systém @lin_homo_system na systém s diagonální maticí.
 
 #linebreak()
-#definition(name: "homeomorfismus")[O zobrazení říkáme, že je homeomorfní pokud je bijektivní, spojité a inverzní zobrazení je též spojité.]
+#definition[Homeomorfismus][O zobrazení říkáme, že je homeomorfní pokud je bijektivní, spojité a inverzní zobrazení je též spojité.]
 #linebreak()
-#theorem()[Mějme matici $A$ typu $n times n,$ jež má $n$ různých reálných vlastních čísel $lambda_i.$ Pak ${V_i}$ (množina vlastních vektorů) tvoří bázi v $RR^n$.
+#theorem[][Mějme matici $A$ typu $n times n,$ jež má $n$ různých reálných vlastních čísel $lambda_i.$ Pak ${V_i}$ (množina vlastních vektorů) tvoří bázi v $RR^n$.
 Matice $P = ( V_1 bar.v dots bar.v V_n )$ je invertibiliní a $ P^(-1) A P = "diag"(lambda_1, dots, lambda_n). $]
 #linebreak()
-#theorem(name: "Obecněji")[Lineární transformace $T$ $n$-tého řádu, která vektoru $Y in RR^n$ přiřadí stavový vektor $X = T Y$  systému @uncoupled_system, zobrazuje systém @uncoupled_system na opět lineární systém #numbered_eq($Y' = B Y,$)<system2> kde matice $B = T^(-1) A T$ a systémy @uncoupled_system a @system2 jsou homeomorfní v $RR^n$. Zachovává-li zobrazení i orientaci pohybu, říkáme že jsou systémy navzájem topologicky ekvivalentní.]
+#theorem[Obecněji][Lineární transformace $T$ $n$-tého řádu, která vektoru $Y in RR^n$ přiřadí stavový vektor $X = T Y$  systému @uncoupled_system, zobrazuje systém @uncoupled_system na opět lineární systém #numbered_eq($Y' = B Y,$)<system2> kde matice $B = T^(-1) A T$ a systémy @uncoupled_system a @system2 jsou homeomorfní v $RR^n$. Zachovává-li zobrazení i orientaci pohybu, říkáme že jsou systémy navzájem topologicky ekvivalentní.]
 
 #linebreak()
 Proces diagonalizace provedeme následovně: definujeme lineární transformaci souřadnic
@@ -57,7 +57,7 @@ $ E(t) = "diag"(e^(lambda_1 t), dots, e^(lambda_n t)). $
 O lineární rovnici víme, že obecné řešení má tvar $x = c e^(a t)$, chtěli bychom najít nějakou paralelu k systémům rovnic, přece jenom je jejich zápis velice podobný. K tomu se nám bude hodit exponenciální matice.
 
 #linebreak()
-#theorem()[Je-li $A$ typu $n times n$ reálná či komplexní matice, tak maticová řada $limits(sum)_(k = 0)^infinity (A^k t^k)/k!$ konverguje k matici $e^(A t)$ třídy $n times n$, která má valstnosti:
+#theorem[][Je-li $A$ typu $n times n$ reálná či komplexní matice, tak maticová řada $limits(sum)_(k = 0)^infinity (A^k t^k)/k!$ konverguje k matici $e^(A t)$ třídy $n times n$, která má valstnosti:
 + $dif/(dif t) e^(A t) = A e^(A t) = e^(A t) A$
 + $e^((t+s)A) = e^(A t) e^(A s)$
 + $e^(A 0) = EE and e^(A t)$ je invertibilní $and e^(A t) e^(- A t) = EE$, kde $EE$ je jednotková matice.]
@@ -66,7 +66,7 @@ O lineární rovnici víme, že obecné řešení má tvar $x = c e^(a t)$, cht�
 Bude-li $X(0) = u_j$ pak $ X = e^(A t) = e^(lambda_j t) e^(A t) e^(-lambda_j t) u_j = e^(lambda_j t) e^((A -lambda_j I)t) = e^(lambda_j t) (I + (A - lambda_j I)t + dots ) u_j = e^(lambda_j t) u_j. $
 
 #linebreak()
-#theorem(name: "Základní věta pro lineární systémy")[Nechť A je typu $n times n$. Potom pro dané $X_0 in RR^n$, má Cauchyho problém
+#theorem[Základní věta pro lineární systémy][Nechť A je typu $n times n$. Potom pro dané $X_0 in RR^n$, má Cauchyho problém
 $
 X' = A X\
 X(0) = X_0
@@ -77,9 +77,9 @@ X(t) = e^(A t) X_0.
 $]
 
 #linebreak()
-#theorem(name: "Cayley-Hamilton")[Nechť $P(lambda)$ je charakteristický polynom matice typu $n times n$. Pak maticový polynom získaný zaměněním $A^k$ za $lambda^k$ do $P(lambda)$ splňuje $P(A) = 0$.]
+#theorem[Cayley-Hamilton][Nechť $P(lambda)$ je charakteristický polynom matice typu $n times n$. Pak maticový polynom získaný zaměněním $A^k$ za $lambda^k$ do $P(lambda)$ splňuje $P(A) = 0$.]
 #linebreak()
-#theorem()[Koeficienty $b_i$ vyhovují rovnici
+#theorem[][Koeficienty $b_i$ vyhovují rovnici
 $ e^(lambda_k t) = b_0 (t) + b_1 (t) lambda_n + dots + b_(n-1) (t) lambda_k^(n-1), quad k = 1, dots, n $
 jsou-li $lambda_k$ jednoduchá vlastní čísla. Pro $r$-násobné vlastní číslo platí
 $ (dif^s)/(dif lambda^s) e^(lambda t) = (dif^s)/(dif lambda^s) (b_0 (t) + b_1 (t) lambda_n + dots + b_(n-1) (t) lambda_k^(n-1)), quad s = 1,dots,r-1 $]
@@ -88,7 +88,7 @@ $ (dif^s)/(dif lambda^s) e^(lambda t) = (dif^s)/(dif lambda^s) (b_0 (t) + b_1 (t
 Řešení odhadujeme ve tvaru $x_i = u_i e^{lambda_i}$, kde $(u_i, lambda_i)$ je vlastní pár matice $A$. Může nastat několik případů
 
 ==== $n$ lineárně nezávislých vektorů
-#theorem()[Nechť matice $A$ má $n$ lineárně nezávislých vektorů $V^1,dots,V^n$, které jsou příslušné k (ne nutně různým!) vlastním číslům. Potom
+#theorem[][Nechť matice $A$ má $n$ lineárně nezávislých vektorů $V^1,dots,V^n$, které jsou příslušné k (ne nutně různým!) vlastním číslům. Potom
 $
 V^1 e^{lambda_1 t}, V^2e^{lambda_2 t}, dots, V^n e^{lambda_n t}, 
 $
@@ -153,7 +153,7 @@ X' = A X + F(t),
 $)<nonhom_system>
 kde A je matice typu $n times n$ a $F (t)$ je spojitá vektorová funkce.
 #linebreak()
-#definition(name: "Fundamentální matice")[Libovolné řešení rovnice
+#definition[Fundamentální matice][Libovolné řešení rovnice
 $
 X' = A X.
 $
@@ -170,7 +170,7 @@ $]
 #linebreak()
 #remark()[]
 #linebreak()
-#definition(name: "Princip superpozice")[Nechť $X_C = C_1 X_1 + dots + C_n X_n$ je obecné řešení homogenního problému a nechť $X_P$ je řešení .... Pak obecné řešení má tvar
+#definition[Princip superpozice][Nechť $X_C = C_1 X_1 + dots + C_n X_n$ je obecné řešení homogenního problému a nechť $X_P$ je řešení .... Pak obecné řešení má tvar
 $
 X = X_C + X_P
 $]
@@ -184,17 +184,17 @@ $
 X' = A X.
 $
 #linebreak()
-#definition(name: "Tok lineárního systému")[Množina zobrazení $e^(A t):RR^n mapsto RR^n$ se nazývá tokem lineárního systému. (Popisuje pohyb bodů ... po trajektoriích systém ...)]
+#definition[Tok lineárního systému][Množina zobrazení $e^(A t):RR^n mapsto RR^n$ se nazývá tokem lineárního systému. (Popisuje pohyb bodů ... po trajektoriích systém ...)]
 #linebreak()
-#definition(name: "Hyperbolický lineární systém ODR")[Mají-li všechna valstní čísla matice $A$ nenulovou reálnou část, říkáme o lineárním systému ODR že je hyperbolický]
+#definition["Hyperbolický lineární systém ODR][Mají-li všechna valstní čísla matice $A$ nenulovou reálnou část, říkáme o lineárním systému ODR že je hyperbolický]
 #linebreak()
-#definition(name: "Invariantní množina")[Podnožina $E subset RR^n$ se nazývá invariantní k toku $e^(A t)$, jestliže platí $e^(A t) E in E$ pro $forall t in RR$]
+#definition[Invariantní množina][Podnožina $E subset RR^n$ se nazývá invariantní k toku $e^(A t)$, jestliže platí $e^(A t) E in E$ pro $forall t in RR$]
 #linebreak()
-#definition()[Mějme lineární systém $dot(X) = A X$ a nechť $w_j = u_j + i v_j$ je zobecněný vlastní vektor matice $A$ odpovídající vlastnímu číslu $lambda_j = alpha_j + i beta_j$ a nechť  $ {u_1, dots, u_r, v_(k+1),dots,v_r}$ je báze $RR^n, (n = 2 r -k)$.
+#definition[][Mějme lineární systém $dot(X) = A X$ a nechť $w_j = u_j + i v_j$ je zobecněný vlastní vektor matice $A$ odpovídající vlastnímu číslu $lambda_j = alpha_j + i beta_j$ a nechť  $ {u_1, dots, u_r, v_(k+1),dots,v_r}$ je báze $RR^n, (n = 2 r -k)$.
 - Pak podprostor vytvořený zobecněnými vlastními vektory jimž odpovídají vlastní čísla se zápornou reálnou částí se nazývá *stabilní podprostor* a značíme ho $E^s = "span"{u_j,v_j : alpha_j < 0}$
 - Podprostor vytvořený zobecněnými vlastními vektory jimž odpovídají vlastní čísla s kladnou reálnou částí se nazývá *nestabilní podprostor* a značíme ho $E^u = "span"{u_j,v_j : alpha_j > 0}$
 - Podprostor vytvořený zobecněnými vlastními vektory jimž odpovídají vlastní čísla s nulovou reálnou částí se nazývá *centrální podprostor* a značíme ho $E^c = "span"{u_j,v_j : alpha_j = 0}$]
 #linebreak()
-#theorem()[Vlastnosti řešení lineárního systému v invariantních podprostorech
+#theorem[][Vlastnosti řešení lineárního systému v invariantních podprostorech
 - Je-li $X_0 in E^s$ pak pro $forall t in RR$ je $limits(lim)_(t arrow infinity) e^(A t) X_0 = 0$. Bod rovnováhy je asymptoticky stabilní.
 - Je-li $X_0 in E^u$ pak pro $forall t in RR$ je $limits(lim)_(t arrow infinity) e^(A t) X_0 = plus.minus infinity$. Bod rovnováhy je asymptoticky nestabilní.]

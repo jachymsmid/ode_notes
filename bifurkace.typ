@@ -1,7 +1,6 @@
 #import "config.typ":*
-#show: thm-rules
-
-= Bifurkace
+#show: frame-style(styles.hint)
+= Úvod do teorie bifurkací
 #definition()[]
 #linebreak()
 #theorem()[]

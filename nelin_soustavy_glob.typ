@@ -1,10 +1,9 @@
 #import "config.typ":*
-#show: thm-rules
-
-= Soustava nelineárních diferenciálních rovnic - globální chování
+#show: frame-style(styles.hint)
+= Soustavy nelineárních diferenciálních rovnic - globální chování
 
 == Dynamické systémy
-#definition(name: "Dynamický systém")[Dynamický systém na $E$ je zobrazení
+#definition[Dynamický systém][Dynamický systém na $E$ je zobrazení
 $ phi: RR times E mapsto E, $
 kde $E$ je otevřená podmnožina $RR^n$ a pokud $phi_t (x) = phi (t,x)$, potom $phi_t$ splňuje
 + $phi_0 (x) = x " pro " forall x in E$
@@ -26,7 +25,7 @@ x(0) = x_0.
 $
 
 #linebreak()
-#theorem(name: "O globální existenci")[Pro $F in cal(C)^1 (RR^n)$ a pro $forall x_0 in RR^n$, má počáteční problém
+#theorem[O globální existenci][Pro $F in cal(C)^1 (RR^n)$ a pro $forall x_0 in RR^n$, má počáteční problém
 #numbered_eq($
 dot(x) = F(x)/(1 + abs(F(x)))\
 x(0) = x_0,
@@ -37,7 +36,7 @@ jednoznačné řešení $x(t)$ definované pro $forall t in RR$, tedy @sys1 defi
 Uvažjme autonomní systém @auto_system
 s $F in cal(C)^1 (E),$ kde $E$ je otevřená podmnožina $RR^n.$ Uvedli jsme že tato rovnice definuje dynamický systém $phi (t,x)$ na $E$. Pro $x in E$ funkce $phi (dot.op,x): RR mapsto E$ definuje křivku řešení, trajektorii a orbitu systému @auto_system procházející bodem $x_0 in E$.
 
-#definition(name: "Trajektorie")[Trajektorí bodem $x_0$ nazýváme množinu
+#definition[Trajektorie][Trajektorí bodem $x_0$ nazýváme množinu
 $ Gamma_(x_0) = {x in E : x = phi(t, x_0), forall t in R}, $
 speciálně množiny
 $
@@ -46,15 +45,15 @@ Gamma_(x_0)^- = {x in E : x = phi(t, x_0), forall t < 0}
 $
 nazýváme pozitivní respektive negativní polotrajektorie.]
 #linebreak()
-#definition(name: "Limitní body")[Nechť $Gamma$ jsou trajektorie @auto_system. Existuje-li posloupnost ${t_n} arrow infinity$ s $n arrow infinity$ tak, že $lim_(n arrow infinity) phi(t_n, x_0) = P.$ Pak $P$ se nazývá $omega$-limitní bod trajektorie $Gamma.$
+#definition[Limitní body][Nechť $Gamma$ jsou trajektorie @auto_system. Existuje-li posloupnost ${t_n} arrow infinity$ s $n arrow infinity$ tak, že $lim_(n arrow infinity) phi(t_n, x_0) = P.$ Pak $P$ se nazývá $omega$-limitní bod trajektorie $Gamma.$
 
 Obobně existuje-li posloupnost ${t_n} arrow - infinity$ s $n arrow infinity$ tak, že $lim_(n arrow infinity) phi(t_n,x_0) = P$. Pak $P$ se nazývá $alpha$-limitní bod trajektorie $Gamma.$]
 #linebreak()
-#definition(name: "Limitní trajektorie")[Množina všech $omega$-limitních (respektive $alpha$) bodů se nazývá $omega$-limitní (respektive $alpha$) trajektorie a značí se $omega (Gamma)$ (respektive $alpha (Gamma)$).]
+#definition[Limitní trajektorie][Množina všech $omega$-limitních (respektive $alpha$) bodů se nazývá $omega$-limitní (respektive $alpha$) trajektorie a značí se $omega (Gamma)$ (respektive $alpha (Gamma)$).]
 #linebreak()
 #theorem()[Množiny $omega (Gamma), thick alpha(Gamma)$ a trajektorie $Gamma$ systému @auto_system jsou uzavřené podmnožiny $E$ a jsou-li kompaktní v $RR^n$ pak jsou i souvislé a neprázdné.]
 #linebreak()
-#theorem(name: "Atraktující množina")[Nechť množina $A subset E$, $A$ je uzavřená. Pak $A$ se nazývá atraktující množina systému @auto_system, existuje-li okolí $cal(U)$ množiny $A$ takové, že pro $forall x in cal(U)$ je $phi (t, x) in cal(U)$ pro
+#theorem[Atraktující množina][Nechť množina $A subset E$, $A$ je uzavřená. Pak $A$ se nazývá atraktující množina systému @auto_system, existuje-li okolí $cal(U)$ množiny $A$ takové, že pro $forall x in cal(U)$ je $phi (t, x) in cal(U)$ pro
 $t>0$ a $phi (t,x) arrow A$ pro $t arrow infinity.$ Obsahuje-li $A$ hustou orbitu, pak se nazývá atraktorem.]
 #linebreak()
 Z toho vyplývá pár věcí:
@@ -65,14 +64,14 @@ Z toho vyplývá pár věcí:
 
 == Periodické orbity
 
-#definition(name: "Periodická orbita")[Peridodickou orbitou systému @auto_system nazýváme každou uzavřenou trajektorii systému @auto_system, která není bodem rovnováhy systému @auto_system.]
+#definition[Periodická orbita][Peridodickou orbitou systému @auto_system nazýváme každou uzavřenou trajektorii systému @auto_system, která není bodem rovnováhy systému @auto_system.]
 #linebreak()
-#definition(name: "Stabilní periodická orbita")[Periodická orbita $Gamma$ se nazývá stabilní, jestliže pro $forall epsilon > 0$ existuje okolí $cal(N)_epsilon (Gamma)$ křivky $Gamma$ takové, že pro $forall x in cal(N)_epsilon (Gamma)$ je $d (Gamma_x^+, Gamma) < epsilon$
+#definition[Stabilní periodická orbita][Periodická orbita $Gamma$ se nazývá stabilní, jestliže pro $forall epsilon > 0$ existuje okolí $cal(N)_epsilon (Gamma)$ křivky $Gamma$ takové, že pro $forall x in cal(N)_epsilon (Gamma)$ je $d (Gamma_x^+, Gamma) < epsilon$
 tzn. $forall x in cal(N)_epsilon (Gamma) " a " t gt.eq 0  imply d(phi(t,x), Gamma) < epsilon.$]
 #linebreak()
-#definition(name: "Nestabilní periodická orbita")[Nestabilní orbita je orbita, která není stabilní.]
+#definition[Nestabilní periodická orbita][Nestabilní orbita je orbita, která není stabilní.]
 #linebreak()
-#definition(name: "Asymptoticky stabilní periodická orbita")[Asymptoticky stabilní orbita je orbita, která je stabilní a platí pro ni
+#definition[Asymptoticky stabilní periodická orbita][Asymptoticky stabilní orbita je orbita, která je stabilní a platí pro ni
 $forall x in cal(N)_epsilon (Gamma) " je " limits(lim)_(t arrow infinity) d(phi_t(x), Gamma) = 0.$]
 #linebreak()
 #remark()[
@@ -88,11 +87,11 @@ $forall x in cal(N)_epsilon (Gamma) " je " limits(lim)_(t arrow infinity) d(phi_
 Této věty existují permutace pro vnější/vnitřní okolí a $alpha$/$omega$ limitní množiny.
 
 #linebreak()
-#definition(name: "Homoklinická orbita")[Je-li $x^*$ bod rovnováhy systému @auto_system $omega$-limitní a zároveň $alpha$-limitní množinou nějaké orbity $Gamma$ systému @auto_system, pak se $Gamma$ nazývá homoklinickou orbitou systému @auto_system.]
+#definition[Homoklinická orbita][Je-li $x^*$ bod rovnováhy systému @auto_system $omega$-limitní a zároveň $alpha$-limitní množinou nějaké orbity $Gamma$ systému @auto_system, pak se $Gamma$ nazývá homoklinickou orbitou systému @auto_system.]
 #linebreak()
-#definition(name: "Heteroklinická orbita")[Existují-li v systému @auto_system dva body rovnováhy $x_1^*, thick x_2^*$ a je-li $x_1^*$ $omega$-limitní množinou nějaké orbity $Gamma$ a současně $x_2^*$ je $alpha$-limitní množina této orbity. Pak $Gamma$ se nazývá heteroklinická orbita.]
+#definition[Heteroklinická orbita][Existují-li v systému @auto_system dva body rovnováhy $x_1^*, thick x_2^*$ a je-li $x_1^*$ $omega$-limitní množinou nějaké orbity $Gamma$ a současně $x_2^*$ je $alpha$-limitní množina této orbity. Pak $Gamma$ se nazývá heteroklinická orbita.]
 == Poincarého zobrazení
-#definition(name: "Poincarého zobrazení")[Nechť $Gamma$ je periodickou orbitou systému @auto_system procházející bodem $x_0$ a nechť $Sigma$ je nadrovina kolmá na $Gamma$
+#definition[Poincarého zobrazení][Nechť $Gamma$ je periodickou orbitou systému @auto_system procházející bodem $x_0$ a nechť $Sigma$ je nadrovina kolmá na $Gamma$
 v bodě $x_0$. Pro $forall x in Sigma$ dostatečně blízko $x_0$ tak, že řešení @auto_system
 procházející bodem $x_0$ v čase $t=0$ prochází znovu plochou $Sigma$ v bodě $P(x)$ blízko $x_0$. Pak $x mapsto P(x)$ je Poincarého zobrazení.]
 #linebreak()
@@ -142,22 +141,22 @@ Pak se $Gamma$ nazývá cyklus násobnosti $n$, je-li $n = 1$ pak je cyklus tzv.
 === Zobecnění pro systémy vyšších dimenzí
 #theorem()[Nechť $Gamma: x = gamma(t), thick 0 lt.eq t lt.eq T$ je periodická orbita v $E$, $E subset RR^n$ je otevřená množina. Místo $P'(s)$ je nutné používat Jacobiho matici zobrazení
 $ D P(x_0), thick x_0 in Gamma $
-Linearizujeme podél $Gamma$ 
+Linearizujeme podél $Gamma$
 $ dot(x) = A(t) x, quad A(t) = D F(gamma(t)) $
 Fundamentální matice systému je $phi.alt : dot(phi.alt) = A(t) phi.alt$ 
 $ phi.alt(0) = EE, quad norm(D P(x_0)) = norm(phi.alt(T)) = norm(e^(B t)) $
 kde $B$ je konstantní matice, vlastní čísla matice e^(B t) jsou $e^(lambda_j t)$, kde $lambda_j$ jsou vlastní čísla matice $B$. $lambda_i$ jsou charakteristické exponenty $gamma(t)$ a $e^(lambda_i t)$ jsou charakteristické násobky $gamma(t)$.]
 
 == Stabilní varieta periodických orbit
-#theorem(name: "O stabilní varietě periodické orbity")[Buď ..., ... je otevřená ... a ... je peridická orbita systému @auto_system s periodou ....
+#theorem[O stabilní varietě periodické orbity][Buď ..., ... je otevřená ... a ... je peridická orbita systému @auto_system s periodou ....
 
 Buď .... tok systému @auto_system a .... Má-li ... charakteristických exponentů zápornou reálnou část (...) a ... kladnou reálnou část, pak existuje ... takové, že stabilní varieta
 ....]
 == Poincarého-Bendixsonova teorie
-#theorem(name: "Poincaré-Bendixsonova")[Nechť $F in cal(C)^1(E)$, $E$ je otevřená a taková, že @auto_system má trajektorii v nějaké kompaktní podmnožině $E$. Pak neobsahuje-li $omega(Gamma)$ žádné kritické body je $omega(Gamma)$ periodická orbita systému @auto_system.]
+#theorem[Poincaré-Bendixsonova][Nechť $F in cal(C)^1(E)$, $E$ je otevřená a taková, že @auto_system má trajektorii v nějaké kompaktní podmnožině $E$. Pak neobsahuje-li $omega(Gamma)$ žádné kritické body je $omega(Gamma)$ periodická orbita systému @auto_system.]
 #linebreak()
 #theorem()[Uvnitř limitního cyklu planárního systému @auto_system existuje alespoň jeden bod rovnováhy.]
 #linebreak()
-#theorem(name: "Bendixsonova kritérium")[Nechť $F in cal(C)^1(E)$, $E subset RR^2$ je otevřená jednoduše souvislá. Jestliže divergence vektorového pole $F$ není identicky rovná nule a nemění-li znaménko v $E$, pak systém @auto_system nemá periodickou orbitu v $E$.]
+#theorem[Bendixsonova kritérium][Nechť $F in cal(C)^1(E)$, $E subset RR^2$ je otevřená jednoduše souvislá. Jestliže divergence vektorového pole $F$ není identicky rovná nule a nemění-li znaménko v $E$, pak systém @auto_system nemá periodickou orbitu v $E$.]
 #linebreak()
-#proof(name: "Důkaz sporem")[doplnit ...]
+#proof[Důkaz sporem][doplnit ...]

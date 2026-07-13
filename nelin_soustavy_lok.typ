@@ -1,7 +1,6 @@
 #import "config.typ":*
-#show: thm-rules
-
-= Soustava nelineárních diferenciálních rovnic - lokální chování
+#show: frame-style(styles.hint)
+= Soustavy nelineárních diferenciálních rovnic - lokální chování
 Soustavou nelineárních diferenciálních rovnic nazýváme
 #numbered_eq($X' = F(t,X), quad X(0) = X_0.$)<nonlin_system>
 
@@ -27,7 +26,7 @@ tomu říkáme blow up řešení.]
 #linebreak()
 #theorem()[Nechť $E$ je otevřená podmnožina $RR^n, X_0 in E$ a nechť $F in cal(C)^1 (E)$. Pak existuje $a >0$ takové, že počáteční problém $dot(X) = F(X), X(0) = X_0$ má jediné řešení na $chevron.l -a, a chevron.r$]
 #linebreak()
-#theorem(name: "Barrowův vzorec")[Je-li řešení $x(t)$ rovnice $dot(X) = F(X)$ na intervalu $I = (t_0,t_1), F in cal(C)^1 (I)$ a $F(X) != 0$ na $I$. Označme $a = lim_(t arrow t_0^+) x(t), b = lim_(t arrow t_1^-) x(t)$. Pak
+#theorem[Barrowův vzorec][Je-li řešení $x(t)$ rovnice $dot(X) = F(X)$ na intervalu $I = (t_0,t_1), F in cal(C)^1 (I)$ a $F(X) != 0$ na $I$. Označme $a = lim_(t arrow t_0^+) x(t), b = lim_(t arrow t_1^-) x(t)$. Pak
 $
 t_1 - t_0 = integral_a^b 1/F(z) dif z
 $]
@@ -101,7 +100,7 @@ Tím dostaneme soustavu $dot(U) = G(U)$, ve které je bod $H$ počátkem. Sestav
 
 
 == Body rovnováhy nelineárního systému
-#definition(name: "Bod rovnováhy")[Body rovnováhy jsou body pro něž platí
+#definition[Bod rovnováhy][Body rovnováhy jsou body pro něž platí
 $
 F(X_0) = 0.
 $]
@@ -113,9 +112,9 @@ Rozlišujeme několik druhů bodů rovnováhy:
 - nestabilní není-li stabilní
 
 #linebreak()
-#definition(name: "Oblast atraktivity")[]
+#definition[Oblast atraktivity][]
 #linebreak()
-#theorem(name: "Hurwitzovo kriterium")[]
+#theorem[Hurwitzovo kriterium][]
 
 Mějme rovinný nelineární systém ve tvaru:
 $
@@ -124,7 +123,7 @@ dot(y) &= Q( x, y )
 $
 
 
-#definition(name: "Topologické sedlo" )[ Jestliže existují trajektorie $Gamma_i = { x in E; x = phi ( t, x_i ), t in RR }$
+#definition[Topologické sedlo][ Jestliže existují trajektorie $Gamma_i = { x in E; x = phi ( t, x_i ), t in RR }$
 takové, že $limits(lim)_(t -> +oo) phi (t, x_i) = x_0, i = 1,2$
 a dále existují trajektorie $Gamma_i = { x in E; x = phi ( t, x_i ), t in RR }$
 takové, že $limits(lim)_(t -> -oo) phi (t, x) = x_0, i = 3,4$.
@@ -147,7 +146,7 @@ Topologické sedlo má varietey:
   + Ohnisko
   + Střed-ohnisko]
 
-#definition(name: "Sektor")[Sektor je oblast ohraničená separatisami]
+#definition[Sektor][Sektor je oblast ohraničená separatisami]
 
 Sektorů máme tři typy, budeme je rozlišovat pouze dle obrázků
 - Hyperbolický sektor
