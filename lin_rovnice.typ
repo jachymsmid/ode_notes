@@ -35,6 +35,31 @@ Metoda má tři kroky:
 $
 y^' = x y^3, quad y(0) = 1
 $
+#divide()
+Separace
+$
+1/(y)^3 dif y = x dif x
+$
+Integrace
+$
+integral y^(-3) dif y = integral x dif x\
+y^(-2) = x^2 + C
+$
+Inverze
+$
+y^2 = -(x^2+C)^(-1)\
+abs(y) = sqrt(-(x^2+C)^(-1)) = sqrt(1/(-x^2+K))\
+$
+Dosazení počáteční podmínky
+$
+y = sqrt(1/(-x^2+K))\
+1 = sqrt(1/(-0^2+K))\
+imply K = 1
+$
+Řešení:
+$
+y = sqrt(1/(-x^2+1))\
+$
 ]
 
 === Bernoulliova rovnice
@@ -60,6 +85,46 @@ u'v &= g dot.op (u v)^p\
 $
 Rovnici pro $u$ lze znovu řešit separací. Hledanou funkci teď dostaneme prostou desubstitucí $y = u v$.
 
+#example[][
+Řešme Cauchyho úlohu
+$
+y^' - y/x = 2x^3, quad y(2) = 2/3
+$
+#divide()
+Substituce $y = u v$
+$
+u^'v + u v^' - (u v)/x = 2x^3\
+u^'v + u (v^' - v/x) = 2x^3\
+$
+Řešení $v^' - v/x = 0$ separací proměnných
+$
+v^' - v/x = 0\
+1/v dif v = 1/x dif x, quad x in RR backslash {0}\ 
+integral 1/v dif v = integral 1/x dif x\
+imply v = x + C
+$
+Za konstantu si zvolíme nulu ( $C=0$).
+Dosadíme do původní rovnice a řešíme prostou integrací
+$
+u^'x = 2x^3\
+u^' = 2x^2\
+u = integral u^' = integral 2x^2 = 2/3 x^3 + K\
+$
+Desubstituce
+$
+y = u v = 2/3 x^4 + K x
+$
+Dosazení počáteční podmínky
+$
+2/3 = 2/3 2^4 + K 2\
+imply K = -5
+$
+Dostáváme konečné řešní ve tvaru
+$
+y = 2/3 x^4 - 5 x, quad x in (0, infinity)
+$
+]
+
 === Metoda variace konstant
 Prvně navržena Lagrangem. Znovu řešíme rovnici typu
 $
@@ -72,12 +137,52 @@ y_h &= C e^(-integral a(x) dif x)
 $
 Nyní uvažujeme $C = C(x)$ a dosadíme $y_h$ do původní rovnice. Tím dostaneme rovnici pro $C(x)$ a neznámá funkce je potom $y = C(x) e^(-integral a dif x)$.
 
+#example[][
+Řešme Cauchyho úlohu
+$
+x y^' + 3y = x^2, quad y(1) = 0
+$
+#divide()
+Homogenní rovnici řešíme separací
+$
+x y^'+3y=0\
+1/y_h dif y = -3/x dif x\
+integral 1/y_h dif y = -3 integral 1/x dif x\
+ln(abs(y_h)) = -3 ln(abs(x)) + C\
+y_h = K/x^3
+$
+Variace
+$
+K = K(x) arrow y = K(x)/x^3
+$
+Dosadíme do původní rovnice
+$
+x (K^' 1/x^3 - 3K/x^4) + 3K/x^3 = x^2
+K^'/x^2 = x^2
+$
+Řešíme prostou integrací
+$
+K = integral K^'= integral x^4 = x^5/5 + D
+$
+Dosadíme a určíme konstantu z počátečních podmínek
+$
+y = (x^5 + E)/(5x^3)\
+0 = (1^5 + E)/(5 dot.op 1^3) imply E = -1
+$
+Dostáváme řešení
+$
+y = (x^5 -1)/(5x^3)
+$
+]
+
+Tato metoda je nejsnáze zobecnitelná, proto je také hojně užívaná.
+
 === Metoda integračního faktoru
 Navržena Eulerem. Řešíme rovnici typu
 $
 y' + a(x)y = g(x)
 $
-Metoda integračního faktoru spočívá v tom přenásobit obě strany nějakou vhodnou funkcí abychom levou stranu dostali pod společnou derivaci. Pro naši rovnici je vhodným integračním faktorem funkce $e^(integral a dif x)$
+Metoda integračního faktoru spočívá v přenásobením obou stran nějakou vhodnou funkcí abychom levou stranu dostali pod společnou derivaci. Pro naši rovnici je vhodným integračním faktorem funkce $e^(integral a dif x)$
 $
 y' + a(x)y &= g(x) quad backslash dot.op e^(A(x)),
 $
@@ -93,12 +198,29 @@ e^A y = integral g e^A dif x\
 y = e^(-A) integral g e^A dif x
 $
 
+#example[][
+Řešme Cauchyho úlohu
+$
+y^' + tan(x) y = sin(2x), quad y(1) = 0
+$
+#divide()
+Určíme integrační faktor
+$
+A(x) = integral tan(x) dif x = -ln(abs(cos(x)))
+$
+Obecné řešní najdeme vyřešením
+$
+y = e^(ln(abs(cos(x)))) integral sin(2x) e^(-ln(abs(cos(x)))) dif x\
+y = cos(x) integral sin(2x) cos(x) dif x
+$
+
+]
+
 == Věta o existenci a jednoznačnosti
 Ne všechny rovnice mají řešní, a jestliže ho mají, nemusí být určeno jednoznačně (tedy existuje více řešní).
 Chtěli bychom tedy vědět za jakých podmínek má smysl ODR řešit, s tím nám pomůže následující věta.
 
-#linebreak()
-#theorem()[Mějme obyčejnou diferenciální rovnici prvního řádu
+#theorem[][Mějme obyčejnou diferenciální rovnici prvního řádu
 $
 y' = f(x,y).
 $
@@ -106,12 +228,10 @@ Nechť $f$ a $(partial f)/(partial y)$ jsou spojité na $G subset.eq RR^2$ a ngj
 $
 y' = f(x,y),quad y(x_0) = y_0
 $]
-#linebreak()
 
 Důležité je si uvědomit co věta říká a co neříká, to se pokusíme ilustrovat na následujících příkladech.
 
-#linebreak()
-#example()[Mějme náldedující Cauchyho úlohu
+#example[][Mějme náldedující Cauchyho úlohu
 $
 y' = y, quad y(0) = 0
 $
@@ -123,10 +243,8 @@ ln(abs(y)) &= x +C\
 y &= plus.minus K e^x quad K in RR^+, x in RR
 $
 To je tedy obecné řešení, vidíme ale že pro danou počáteční podmínku řešení neexistuje, přitom ale splňujeme požadavky věty o existenci a jednoznačnosti. Věta nám ale neříká, že pro každou počáteční podmínku řešení existuje, říká jen že pro nějakou počáteční podmínku rešení existovat bude a že bude jednoznačné.]
-#linebreak()
 
-#linebreak()
-#example()[Mějme následující Cauchyho úlohu
+#example[][Mějme následující Cauchyho úlohu
 $
 y' = sqrt(abs(y)), quad y(0) = 0
 $
@@ -139,4 +257,3 @@ y &= 1/2 (x+C)^2\
 y &= x^2/2 quad x in RR
 $
 To je ale v podstatě neočekávaný výsledek, vždyť přece počáteční podmínka neleží v oblasti $G$. To je ale právě ono, tím že PP neleží v oblasti $G$, pak větu nelze užít a neříká nám o řešení nic. Věta *neříká* právě tehdy když $[x_0, y_0] in G$  pak rešení existuje a je jednoznačné, to je důležité si uvědomit.]
-#linebreak()

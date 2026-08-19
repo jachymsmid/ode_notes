@@ -2,23 +2,23 @@
 #import "@preview/frame-it:2.0.0":*
 #let (definition,) = frames(
   definition: ("Definice", black),
-  kind: "definition", 
+  kind: "definition",
 )
 #let (theorem,) = frames(
   theorem: ("Věta",black),
   kind: "theorem",
 )
 #let (proof,) = frames(
-  proof: ("Důkaz", black),
-  kind: "proof", 
+  proof: ("Důkaz", gray),
+  kind: "proof",
 )
 #let (example,) = frames(
-  example: ("Příklad",black),
+  example: ("Příklad",gray),
   kind: "example",
 )
 #let (remark,) = frames(
-  remark: ("Poznatek", black),
-  kind: "remark", 
+  remark: ("Poznatek", gray),
+  kind: "remark",
 )
 #let (lemma,) = frames(
   lemma: ("Lemma",black),
@@ -33,7 +33,7 @@
   show: frame-style(styles.hint, kind: "example")
   show: frame-style(styles.hint, kind: "remark")
   show: frame-style(styles.boxy, kind: "lemma")
-  
+
   doc
 }
 
