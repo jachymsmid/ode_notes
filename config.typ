@@ -1,11 +1,11 @@
 // theorems,...
 #import "@preview/frame-it:2.0.0":*
 #let (definition,) = frames(
-  definition: ("Definice", black),
+  definition: ("Definice", gray),
   kind: "definition",
 )
 #let (theorem,) = frames(
-  theorem: ("Věta",black),
+  theorem: ("Věta",gray),
   kind: "theorem",
 )
 #let (proof,) = frames(
@@ -21,7 +21,7 @@
   kind: "remark",
 )
 #let (lemma,) = frames(
-  lemma: ("Lemma",black),
+  lemma: ("Lemma",gray),
   kind: "lemma",
 )
 

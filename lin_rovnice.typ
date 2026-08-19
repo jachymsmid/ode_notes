@@ -21,13 +21,19 @@ Metoda má tři kroky:
 
 + *Separace*\
   Výrazy s $x$ převedeme na jednu stranu a výrazy s $y$ na druhou, tedy je separujeme. Pro více informací, proč si toto můžeme dovolit viz @appendix-separace[Appendix]
-  $ (dif y)/(dif x) &= g(x)h(y)\ (dif y)/(h(y)) &= g(x) dif x $
+  $
+  (dif y)/(dif x) &= g(x)h(y)\ (dif y)/(h(y)) &= g(x) dif x
+  $
   Zde je vidět, proč jsme požadovali aby funkce $h(y)$ byla nenulová.
-+ *Integrace* 
+
++ *Integrace*
   $ integral 1/h(y) dif y &= integral g(x)dif x\ H(y) &= G(x) + C, quad C in RR $
   Existence těchto funkcí je zaručena předpoklady (spojitostí funkcí a omezeností intervalů).
+
 + *Inverze*
-  $ y = H^(-1)( G(x) + C ) $
+  $
+  y = H^(-1)( G(x) + C )
+  $
   Existence inverzní funkce k funkci $H$ je také zaručena předpoklady.
 
 #example[][
@@ -162,7 +168,7 @@ K^'/x^2 = x^2
 $
 Řešíme prostou integrací
 $
-K = integral K^'= integral x^4 = x^5/5 + D
+K = integral K^' dif x = integral x^4 dif x = x^5/5 + D
 $
 Dosadíme a určíme konstantu z počátečních podmínek
 $
@@ -171,7 +177,7 @@ y = (x^5 + E)/(5x^3)\
 $
 Dostáváme řešení
 $
-y = (x^5 -1)/(5x^3)
+y = (x^5 -1)/(5x^3), quad x in RR backslash {0}
 $
 ]
 
@@ -211,7 +217,8 @@ $
 Obecné řešní najdeme vyřešením
 $
 y = e^(ln(abs(cos(x)))) integral sin(2x) e^(-ln(abs(cos(x)))) dif x\
-y = cos(x) integral sin(2x) cos(x) dif x
+y = cos(x) integral sin(2x)/cos(x) dif x = cos(x) integral (2 sin(x) cos(x))/cos(x) dif x =\
+= 2 cos(x) integral sin(x) dif x = - 2 cos(x)^2, quad x in ...
 $
 
 ]
@@ -224,12 +231,12 @@ Chtěli bychom tedy vědět za jakých podmínek má smysl ODR řešit, s tím n
 $
 y' = f(x,y).
 $
-Nechť $f$ a $(partial f)/(partial y)$ jsou spojité na $G subset.eq RR^2$ a ngjechť $[x_0, y_0] in G$, pak existuje právě jedno maximální řešení Cauchyovy úlohy
+Nechť $f$ a $(partial f)/(partial y)$ jsou spojité na $G subset.eq RR^2$ a nechť $[x_0, y_0] in G$, pak existuje právě jedno maximální řešení Cauchyovy úlohy
 $
 y' = f(x,y),quad y(x_0) = y_0
 $]
 
-Důležité je si uvědomit co věta říká a co neříká, to se pokusíme ilustrovat na následujících příkladech.
+Důležité je si uvědomit co věta říká a co neříká, to se pokusím ilustrovat na následujících příkladech.
 
 #example[][Mějme náldedující Cauchyho úlohu
 $
@@ -248,7 +255,7 @@ To je tedy obecné řešení, vidíme ale že pro danou počáteční podmínku 
 $
 y' = sqrt(abs(y)), quad y(0) = 0
 $
-Funkce $f$ je spojitá na $RR$ ale její derivace už jen na $RR backslash {0}$ množinou na které hledáme řešení je $G = RR times RR backslash {0}$. Pro jednoduchost vyřešíme rovnici pouze pro $y > 0$.
+Funkce $f$ je spojitá na $RR$ ale její derivace už jen na $RR backslash {0}$ množinou na které hledáme řešení je $G = RR times RR backslash {0}.$ Pro jednoduchost vyřešíme rovnici pouze pro $y > 0.$
 $
 (dif y)/(sqrt(y)) &= dif x\
 2 sqrt(y) &= x + C\
@@ -256,4 +263,4 @@ y &= 1/2 (x+C)^2\
 0 &= 1/2 (0 +C)^2 arrow.r.double C =0\
 y &= x^2/2 quad x in RR
 $
-To je ale v podstatě neočekávaný výsledek, vždyť přece počáteční podmínka neleží v oblasti $G$. To je ale právě ono, tím že PP neleží v oblasti $G$, pak větu nelze užít a neříká nám o řešení nic. Věta *neříká* právě tehdy když $[x_0, y_0] in G$  pak rešení existuje a je jednoznačné, to je důležité si uvědomit.]
+To je ale v podstatě neočekávaný výsledek, vždyť přece počáteční podmínka neleží v oblasti $G.$ To je ale právě ono, tím že PP neleží v oblasti $G,$ pak větu nelze užít a neříká nám o řešení nic. Věta *neříká* právě tehdy když $[x_0, y_0] in G,$  pak rešení existuje a je jednoznačné, to je důležité si uvědomit.]

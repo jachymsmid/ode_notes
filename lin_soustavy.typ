@@ -1,18 +1,23 @@
 #import "config.typ":*
-#show: frame-style(styles.hint)
+#show: setup-frames
+
 = Soustavy lineárních diferenciálních rovnic
 Máme homogenní soustavu ODR ve tvaru
+
 #numbered_eq($
 X' = A X.
 $)<lin_homo_system>
-#remark[][Každá homogenní soustava má triviální řešení $X = 0$.]
 
+#remark[][ Každá homogenní soustava má triviální řešení $X = 0$. ]
+
+// uncoupled system
 == Systémy s diagonální maticí A
 Tedy systémy bez vzájemného propojení (uncoupled systems) jsou rovnice typu
+
 #numbered_eq($
-X' = A X,
+X' = A X, quad X(0) = C
 $)<uncoupled_system>
-kde matice $A$ je diagonální. Pro takové systémy lze jednoduše najít řešení, při pridání počáteční podmínky, pomocí separace proměnných
+kde matice $A$ je diagonální. Pro takové systémy lze jednoduše najít řešení, pomocí separace proměnných
 $
 x'_i = a_(i i) x_i quad arrow.long quad x_i = c_i e^(a_(i i) t).
 $
@@ -22,17 +27,25 @@ X(t) = "diag"(e^(a_(i i) t)) dot.op C,
 $
 kde $C = X(0)$.
 
+#linebreak()
+#example[][ Mějme Cauchyho úlohu
+$
+A = mat(1,0;0,2), quad X(0) = mat(0;5)
+$
+#divide()
+Řešením tedy je
+$
+X = mat(0;5e^(2t)), quad t in RR
+$
+]
 
+// coupled system
 == Diagonalizace
-Je technika, která nám pomůže převést obecný hommogenní lineární systém @lin_homo_system na systém s diagonální maticí.
+Diagonalizace je technika, která nám pomůže převést obecný hommogenní lineární systém 
+@lin_homo_system na systém s diagonální maticí, který už umíme řešit.
 
-#linebreak()
-#definition[Homeomorfismus][O zobrazení říkáme, že je homeomorfní pokud je bijektivní, spojité a inverzní zobrazení je též spojité.]
-#linebreak()
-#theorem[][Mějme matici $A$ typu $n times n,$ jež má $n$ různých reálných vlastních čísel $lambda_i.$ Pak ${V_i}$ (množina vlastních vektorů) tvoří bázi v $RR^n$.
+#theorem[][Mějme matici $A$ řádu $n times n,$ jež má $n$ různých reálných vlastních čísel $lambda_i.$ Pak ${V_i}$ (množina vlastních vektorů) tvoří bázi v $RR^n$.
 Matice $P = ( V_1 bar.v dots bar.v V_n )$ je invertibiliní a $ P^(-1) A P = "diag"(lambda_1, dots, lambda_n). $]
-#linebreak()
-#theorem[Obecněji][Lineární transformace $T$ $n$-tého řádu, která vektoru $Y in RR^n$ přiřadí stavový vektor $X = T Y$  systému @uncoupled_system, zobrazuje systém @uncoupled_system na opět lineární systém #numbered_eq($Y' = B Y,$)<system2> kde matice $B = T^(-1) A T$ a systémy @uncoupled_system a @system2 jsou homeomorfní v $RR^n$. Zachovává-li zobrazení i orientaci pohybu, říkáme že jsou systémy navzájem topologicky ekvivalentní.]
 
 #linebreak()
 Proces diagonalizace provedeme následovně: definujeme lineární transformaci souřadnic
@@ -51,22 +64,59 @@ $ X(t) = P E(t) P^(-1) X(0), $
 kde $E(t)$ je diagonální matice
 $ E(t) = "diag"(e^(lambda_1 t), dots, e^(lambda_n t)). $
 
+#example[][
+  Mějme lineární systém
+  $
+  X(t) = mat(-1, -3; 0, 2) X
+  $
+#divide()
+
+Nejdříve potřebujeme určit vlastní čísla matice $A.$ Určíme charakteristický polynom
+$
+mat(delim:"|", -1-lambda, -3; 0, 2-lambda) = (-1-lambda)(2-lambda).
+$
+Kořeny tohoto polynomu jsou $lambda_1 = -1, med lambda_2 = 2.$ Nyní je potřeba
+určit vlastní vektory matice.
++ *$lambda = -1$*
+  $
+  mat(-1+1, -3; 0, 2+1) dot.op u = mat(0, -3; 0, 3) dot.op = 0\
+  0 dot.op u_1 -3 dot.op u_2 = 0\
+  u = mat(1; 0)p, quad p in RR
+  $
++ *$lambda = 2$*
+  $
+  mat(-1-2, -3; 0, 2-2) dot.op v = mat(-3, -3; 0, 0) dot.op v = 0\
+  -3 dot.op v_1 -3 dot.op v_2 = 0\
+  v = mat(-1; 1)p, quad p in RR
+  $
+Sestavme matici $P$ a matici k ní inverzní.
+$
+P = mat(u | v ) = mat(1,-1;0,1)\
+P^(-1) = mat(1,1;0,1)\
+$
+Nyní už lze určit diagnoalizovanou matici
+$
+P^(-1) A P = mat(1,1;0,1) mat(-1, -3; 0, 2) mat(1,-1;0,1) = mat(-1,-1;0,2) mat(1,-1;0,1) = mat(-1,0;0,2)
+$
+]
+
 === Fundamentální systém
 
 == Exponenciální matice
-O lineární rovnici víme, že obecné řešení má tvar $x = c e^(a t)$, chtěli bychom najít nějakou paralelu k systémům rovnic, přece jenom je jejich zápis velice podobný. K tomu se nám bude hodit exponenciální matice.
+O lineární homogenní rovnici víme, že obecné řešení má tvar $x = c e^(a t)$, chtěli bychom najít nějakou paralelu k systémům rovnic, přece jenom je jejich zápis velice podobný. K tomu se nám bude hodit exponenciální matice.
 
-#linebreak()
-#theorem[][Je-li $A$ typu $n times n$ reálná či komplexní matice, tak maticová řada $limits(sum)_(k = 0)^infinity (A^k t^k)/k!$ konverguje k matici $e^(A t)$ třídy $n times n$, která má valstnosti:
+#theorem[][Je-li $A$ typu $n times n$ reálná či komplexní matice, tak maticová řada $limits(sum)_(k = 0)^infinity (A^k t^k)/k!$ konverguje k exponenciální matici $e^(A t)$ (tedy $limits(lim)_(n = infinity) limits(sum)_(k = 0)^n (A^k t^k)/k! = e^(A t))$ třídy $n times n$, která má valstnosti:
 + $dif/(dif t) e^(A t) = A e^(A t) = e^(A t) A$
 + $e^((t+s)A) = e^(A t) e^(A s)$
 + $e^(A 0) = EE and e^(A t)$ je invertibilní $and e^(A t) e^(- A t) = EE$, kde $EE$ je jednotková matice.]
-#linebreak()
 
-Bude-li $X(0) = u_j$ pak $ X = e^(A t) = e^(lambda_j t) e^(A t) e^(-lambda_j t) u_j = e^(lambda_j t) e^((A -lambda_j I)t) = e^(lambda_j t) (I + (A - lambda_j I)t + dots ) u_j = e^(lambda_j t) u_j. $
+Zde je dobré si uvědomit že $e^(A t)$ je opravdu jen značení a skrývá se za ní komplexnější operace.
 
 #linebreak()
-#theorem[Základní věta pro lineární systémy][Nechť A je typu $n times n$. Potom pro dané $X_0 in RR^n$, má Cauchyho problém
+Nechť $X(0) = u_j$, pak $ X = e^(A t) = e^(lambda_j t) e^(A t) e^(-lambda_j t) u_j = e^(lambda_j t) e^((A -lambda_j I)t) = e^(lambda_j t) (I + (A - lambda_j I)t + dots ) u_j = e^(lambda_j t) u_j. $
+
+#linebreak()
+#theorem[Základní věta pro homogenní systémy][Nechť A je typu $n times n$. Potom pro dané $X_0 in RR^n$, má Cauchyho problém
 $
 X' = A X\
 X(0) = X_0

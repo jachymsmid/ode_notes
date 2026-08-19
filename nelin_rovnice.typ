@@ -1,5 +1,5 @@
 #import "config.typ":*
-#show: frame-style(styles.hint)
+#show: setup-frames
 = Nelineární diferenciální rovnice
 Nelinární ODR v normálním tvaru nazýváme rovnici
 $

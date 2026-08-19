@@ -1,5 +1,5 @@
 #import "config.typ":*
-#show: frame-style(styles.hint)
+#show: setup-frames
 = Soustavy nelineárních diferenciálních rovnic - lokální chování
 Soustavou nelineárních diferenciálních rovnic nazýváme
 #numbered_eq($X' = F(t,X), quad X(0) = X_0.$)<nonlin_system>

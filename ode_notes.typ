@@ -1,6 +1,8 @@
 #import "config.typ":*
 
+//
 // styling
+//
 #set text(font: "New Computer Modern", size: 11pt, lang: "cs")
 #set page(
   margin: 1in,
@@ -10,7 +12,7 @@
 #set par(first-line-indent: (all: false, amount: 1em), spacing: 0.65em, justify: true,)
 
 
-#set heading(numbering: clean_numbering("I.", "1.i"))
+#set heading(numbering: clean_numbering("I.", "1.1"))
 
 //
 // math
@@ -56,8 +58,9 @@
 #align(left + bottom)[Last changed: #datetime.today().display()]
 #pagebreak()
 
-= Úvod
-Dostává se vám do rukou materiál, který vznikl jako moje osobní poznámky z přednášek.
+#heading(level: 1, numbering: none )[Úvod]
+Dostává se vám do rukou materiál, který vznikl jako moje osobní poznámky z přednášek
+k magisterskému předmětu Obyčejné diferenciální rovnice.
 Do těchto zápisků jsem ale dal tolik času, že jsem se rozhodl je rozšířit, zkompletovat
 a poskytnou jako učební materiál.
 
@@ -69,6 +72,12 @@ Struktura zápisků je následující:
 - V této kapitole se budeme snažit popsat globální chování nelineárních systémů.
   Uvedeme dynamické systémy, definujeme limitní množiny a atraktory, periodické orbity. Zavedeme Poincarého zobrazení. A nakonec uvedeme Poincaré-Bendixsonovu teorii.
 - Poslední kapitolou je úvod do teorie bifurkací.
+#v(0.5cm)
+Tím že jsem na tomto textu pracoval sám může obsahovat chyby, jako třeba nekompletnost,
+kostrbatá vysvětlení, nenázorné příklady, faktické a gramatické chyby atd.
+Byl bych proto rád, kdybyste vy, jako čtenáři, se na textu také podíleli.
+Nejlepší cestou jak k dílu přispět je pull request na githubu #link("https://github.com/jachymsmid/ode_notes")[https://github.com/jachymsmid/ode_notes].
+Případně je možné připomínky zasílat na mail jachym.smid\@alumni.cvut.cz
 #align(right)[Jáchym Šmíd \ Praha, 2026]
 
 #pagebreak()

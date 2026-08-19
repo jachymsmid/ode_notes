@@ -1,5 +1,5 @@
 #import "config.typ":*
-#show: frame-style(styles.hint)
+#show: setup-frames
 = Soustavy nelineárních diferenciálních rovnic - globální chování
 
 == Dynamické systémy
@@ -9,7 +9,7 @@ kde $E$ je otevřená podmnožina $RR^n$ a pokud $phi_t (x) = phi (t,x)$, potom 
 + $phi_0 (x) = x " pro " forall x in E$
 + $phi_t compose phi_s (x) = phi_( t + s ) " pro " forall t,s in RR " and " x in E$]
 #linebreak()
-#remark()[Je-li matice $A$ typu $n times n$ potom funkce $phi (t,x) = e^(A t) x$ definuje dynamický systém na $RR^n$ a také platí, že pro libovolné $x_0 in RR^n$ je funkce $phi (t,x_0)$ řešení počáteční úlohy
+#remark[][Je-li matice $A$ typu $n times n$ potom funkce $phi (t,x) = e^(A t) x$ definuje dynamický systém na $RR^n$ a také platí, že pro libovolné $x_0 in RR^n$ je funkce $phi (t,x_0)$ řešení počáteční úlohy
 $
 dot(x) = A x\
 x(0) = x_0.
@@ -51,7 +51,7 @@ Obobně existuje-li posloupnost ${t_n} arrow - infinity$ s $n arrow infinity$ ta
 #linebreak()
 #definition[Limitní trajektorie][Množina všech $omega$-limitních (respektive $alpha$) bodů se nazývá $omega$-limitní (respektive $alpha$) trajektorie a značí se $omega (Gamma)$ (respektive $alpha (Gamma)$).]
 #linebreak()
-#theorem()[Množiny $omega (Gamma), thick alpha(Gamma)$ a trajektorie $Gamma$ systému @auto_system jsou uzavřené podmnožiny $E$ a jsou-li kompaktní v $RR^n$ pak jsou i souvislé a neprázdné.]
+#theorem[][Množiny $omega (Gamma), thick alpha(Gamma)$ a trajektorie $Gamma$ systému @auto_system jsou uzavřené podmnožiny $E$ a jsou-li kompaktní v $RR^n$ pak jsou i souvislé a neprázdné.]
 #linebreak()
 #theorem[Atraktující množina][Nechť množina $A subset E$, $A$ je uzavřená. Pak $A$ se nazývá atraktující množina systému @auto_system, existuje-li okolí $cal(U)$ množiny $A$ takové, že pro $forall x in cal(U)$ je $phi (t, x) in cal(U)$ pro
 $t>0$ a $phi (t,x) arrow A$ pro $t arrow infinity.$ Obsahuje-li $A$ hustou orbitu, pak se nazývá atraktorem.]
@@ -74,7 +74,7 @@ tzn. $forall x in cal(N)_epsilon (Gamma) " a " t gt.eq 0  imply d(phi(t,x), Gamm
 #definition[Asymptoticky stabilní periodická orbita][Asymptoticky stabilní orbita je orbita, která je stabilní a platí pro ni
 $forall x in cal(N)_epsilon (Gamma) " je " limits(lim)_(t arrow infinity) d(phi_t(x), Gamma) = 0.$]
 #linebreak()
-#remark()[
+#remark[][
 - Periodická orbita odpovídá periodickému řešení systému @auto_system $ phi(t+T,x) = phi(t,x),"kde " min(T) " je perioda." $
 - Periodické orbity mají též stabilní a nestabilní variety 
   $
@@ -82,7 +82,7 @@ $forall x in cal(N)_epsilon (Gamma) " je " limits(lim)_(t arrow infinity) d(phi_
   U(Gamma) = {x in cal(N) : d(phi_t (x),Gamma) arrow 0 " pro " t arrow -infinity}\
   $]
 #linebreak()
-#theorem()[Máme-li periodickou orbitu $Gamma$ rovinného systému @auto_system a existuje-li trajektorie mající $Gamma$ jako svoji $omega$-limitní množinu. Pak každá trajektorie v nějakém _vnějším_ okolí má $Gamma$ jako $omega$-limitní množinu.]
+#theorem[][Máme-li periodickou orbitu $Gamma$ rovinného systému @auto_system a existuje-li trajektorie mající $Gamma$ jako svoji $omega$-limitní množinu. Pak každá trajektorie v nějakém _vnějším_ okolí má $Gamma$ jako $omega$-limitní množinu.]
 #linebreak()
 Této věty existují permutace pro vnější/vnitřní okolí a $alpha$/$omega$ limitní množiny.
 
@@ -95,19 +95,19 @@ Této věty existují permutace pro vnější/vnitřní okolí a $alpha$/$omega$
 v bodě $x_0$. Pro $forall x in Sigma$ dostatečně blízko $x_0$ tak, že řešení @auto_system
 procházející bodem $x_0$ v čase $t=0$ prochází znovu plochou $Sigma$ v bodě $P(x)$ blízko $x_0$. Pak $x mapsto P(x)$ je Poincarého zobrazení.]
 #linebreak()
-#theorem()[Nechť $E subset RR^n$ je otveřená množina, $F in cal(C)^1$. Předpokládejme, že $phi_t (x)$ je periodické řešení @auto_system s periodou $T$ a že cyklus
+#theorem[][Nechť $E subset RR^n$ je otveřená množina, $F in cal(C)^1$. Předpokládejme, že $phi_t (x)$ je periodické řešení @auto_system s periodou $T$ a že cyklus
 $ Gamma = {x in RR^n : x = phi_t (x_0), 0 lt.eq t lt.eq T} $
 je obsažen v $E$. Nechť $Sigma$ je ortogonální nadrovina k $Gamma$ v $x_0$ 
 $ Sigma = {x in RR^n : (x - x_0) dot.op F(x_0) = 0} $
 Pak existuje okolí $cal(N)_delta$ a jediná funkce $tau (x)$ definovaná a spojitě diferencovatelná pro $x in cal(N)_delta (x_0)$ tak, že $tau (x_0) = T$ a $phi_tau (x) in Sigma$ pro $forall x in cal(N)_delta (x_0).$
 $ P(x) = phi_(tau(x)) (x). $]
 #linebreak()
-#remark()[Je-li $P in cal(C)^1, thick cal(U) = cal(N)_delta (x_0) inter Sigma$, pak 
+#remark[][Je-li $P in cal(C)^1, thick cal(U) = cal(N)_delta (x_0) inter Sigma$, pak 
 - Pevné body $P(x)$ odpovídají periodickým orbitám $phi (dot.op, x)$ systému @auto_system.
 - K $P(x)$ existuje inverze $P^(-1) in cal(C)^1.$]
 
 === Poincarého zobrazní pro rovinný systém
-#theorem()[Nechť $x_0$ je počátek souřadnicového systému, $Gamma$ je periodická orbita a $x_0 in Gamma inter Sigma$. $Sigma$ je normála na $Gamma$ procházející $x_0$. Bod $0$ dělí přímku $Sigma$ na část $Sigma^+$ uvnitř $Gamma$ a na $Sigma^-$ vně $Gamma$. Nechť $s$ je vzdálenost od počátku
+#theorem[][Nechť $x_0$ je počátek souřadnicového systému, $Gamma$ je periodická orbita a $x_0 in Gamma inter Sigma$. $Sigma$ je normála na $Gamma$ procházející $x_0$. Bod $0$ dělí přímku $Sigma$ na část $Sigma^+$ uvnitř $Gamma$ a na $Sigma^-$ vně $Gamma$. Nechť $s$ je vzdálenost od počátku
 na přímce $Sigma$ pro $s>0$ na $Sigma^+$ a pro $s<0$ na $Sigma^-$. Dle definice Poincarého zobrazení definované na okolí $abs(s) < delta$ a platí $P(0) = 0$.
 
 Použijeme $P'(0)$ k posouzení stability periodické orbity $Gamma$. Definujme posunutí po $Sigma$ 
@@ -124,22 +124,22 @@ Je-li $d'(s)$ spojité zobrazení a $d'(0) != 0$ pak má $d'(s)$ stejné znamén
   tzn. cyklus je nestabilní limitní cyklus a $alpha$-limitní cyklus.
 ]
 #linebreak()
-#theorem()[Buď $E subset RR^n$, $E$ je otevřená množina, $F in cal(C)^1 (E)$, $gamma(t)$ je periodické řešení systému @auto_system s periodou $T$. Pak derivace Poincarého zobrazení $P(s)$ podél přímky $Sigma$ kolmé na $Gamma$, kde
+#theorem[][Buď $E subset RR^n$, $E$ je otevřená množina, $F in cal(C)^1 (E)$, $gamma(t)$ je periodické řešení systému @auto_system s periodou $T$. Pak derivace Poincarého zobrazení $P(s)$ podél přímky $Sigma$ kolmé na $Gamma$, kde
 $Gamma = {x in RR^2 : x = gamma(t) - gamma(0), 0 lt.eq t lt.eq T}$ v $x=0$ je dáno jako $P'(0) = exp(integral_0^T nabla dot.op F(gamma(t))dif t)$. Dále je $gamma(t)$:
 - stabilní limitní cyklus je-li $integral_0^T nabla dot.op F(gamma(t))dif t < 0$ 
 - nestabilní limitní cyklus je-li $integral_0^T nabla dot.op F(gamma(t))dif t > 0$ 
 - je-li $integral_0^T nabla dot.op F(gamma(t))dif t = 0$  pak cyklus může být stabilní, nestabilní, nebo semistabilní.]
 #linebreak()
-#definition()[Buď $P(s)$ Poincarého zobrazení. Pro $Gamma$ rovinný periodický cyklus systému @auto_system a $d(s) = P(s) - s$. Pak je-li $d(0) = d'(0) = dots = d^(\(n\))(0) = 0$ 
+#definition[][Buď $P(s)$ Poincarého zobrazení. Pro $Gamma$ rovinný periodický cyklus systému @auto_system a $d(s) = P(s) - s$. Pak je-li $d(0) = d'(0) = dots = d^(\(n\))(0) = 0$ 
 $ d^(\(n\)) (0) != 0 $
 Pak se $Gamma$ nazývá cyklus násobnosti $n$, je-li $n = 1$ pak je cyklus tzv. jednoduchý.]
 #linebreak()
-#remark()[Lze ukázat, že
+#remark[][Lze ukázat, že
 - je-li $n$ sudé, pak $Gamma$ je semistabilní cyklus.
 - je-li $n$ liché, pak $Gamma$ je $ cases("stabilní" : thick d^(\(n\))(0) < 0, "nestabilní" : thick d^(\(n\))(0) > 0) $
 ]
 === Zobecnění pro systémy vyšších dimenzí
-#theorem()[Nechť $Gamma: x = gamma(t), thick 0 lt.eq t lt.eq T$ je periodická orbita v $E$, $E subset RR^n$ je otevřená množina. Místo $P'(s)$ je nutné používat Jacobiho matici zobrazení
+#theorem[][Nechť $Gamma: x = gamma(t), thick 0 lt.eq t lt.eq T$ je periodická orbita v $E$, $E subset RR^n$ je otevřená množina. Místo $P'(s)$ je nutné používat Jacobiho matici zobrazení
 $ D P(x_0), thick x_0 in Gamma $
 Linearizujeme podél $Gamma$
 $ dot(x) = A(t) x, quad A(t) = D F(gamma(t)) $

@@ -1,5 +1,5 @@
 #import "config.typ":*
-#show: frame-style(styles.hint)
+#show: setup-frames
 #pagebreak()
 = Appendix
 == Ospravedlnění metody separace proměnných
